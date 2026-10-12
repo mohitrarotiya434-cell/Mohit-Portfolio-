@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">PORT<span>FOLIO.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page-container">
+    <section class="section-heading reveal">
+      <p class="tag">LET'S CONNECT</p>
+      <h1>Contact <span class="gradient">Me</span></h1>
+      <p>Have a project or an idea? Let's talk about it.</p>
+    </section>
+
+    <section class="contact-grid reveal">
+      <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <p>Feel free to reach out for collaborations, projects or questions.</p>
+
+        <div class="contact-item">
+          <span>✉️</span>
+          <div><strong>Email</strong><p>mohitrarotiya434@gmail.com</p></div>
+        </div>
+
+        <div class="contact-item">
+          <span>📍</span>
+          <div><strong>Location</strong><p>chapakheda, block-khachrod, district-ujjain, MP</p></div>
+        </div>
+
+        <div class="contact-item">
+          <span>📸</span>
+          <div><strong>Instagram</strong><p>mohitwebdesigner</p></div>
+        </div>
+      </div>
+
+      <form id="contactForm" class="contact-form">
+        <label for="visitorName">Your Name</label>
+        <input id="visitorName" name="name" type="text"
+               placeholder="Enter your name" required>
+
+        <label for="visitorEmail">Your Email</label>
+        <input id="visitorEmail" name="email" type="email"
+               placeholder="Enter your email" required>
+
+        <label for="visitorMessage">Your Message</label>
+        <textarea id="visitorMessage" name="message" rows="5"
+                  placeholder="Write your message..." required></textarea>
+
+        <button type="submit" class="btn">Prepare Email ↗</button>
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span class="year"></span> Your Name. All rights reserved.
+  </footer>
+</body>
+</html>

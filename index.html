@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Official portfolio of Mohit Rarotiya. Explore my skills, creative projects, AI creations and web development journey.">
+    <meta name="theme-color" content="#080b14">
+
+    <title>Mohit Rarotiya | Official Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Main JavaScript -->
+    <script src="script.js" defer></script>
+
+    <!-- Homepage-only premium effects -->
+    <style>
+        .hero {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            background: #8b5cf6;
+            filter: blur(140px);
+            opacity: .23;
+            z-index: -1;
+            top: 15%;
+            left: 10%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            animation: heroEnter 1s ease both;
+        }
+
+        .hero h1 .gradient {
+            background-size: 200% auto;
+            animation: gradientFlow 4s linear infinite;
+        }
+
+        .hero .tag {
+            display: inline-block;
+            padding: 10px 14px;
+            border: 1px solid #38bdf844;
+            border-radius: 30px;
+            background: #38bdf80d;
+        }
+
+        .hero-image {
+            perspective: 900px;
+        }
+
+        .profile-circle {
+            transition: transform .4s ease;
+        }
+
+        .profile-circle:hover {
+            transform: scale(1.045) rotateY(-5deg);
+        }
+
+        .floating-card {
+            box-shadow: 0 10px 35px #0005;
+            backdrop-filter: blur(12px);
+            animation: cardFloat 4s ease-in-out infinite;
+        }
+
+        .card-two {
+            animation-delay: -2s;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 34px;
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 19px;
+            color: #f4f6ff;
+            margin-bottom: 5px;
+        }
+
+        .hero-stat span {
+            color: #a2abc0;
+            font-size: 11px;
+        }
+
+        .quick-links {
+            width: min(1000px, 84%);
+            margin: 0 auto 55px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .quick-link {
+            display: block;
+            padding: 23px;
+            background: #111726b8;
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 14px;
+            transition: transform .3s, border-color .3s,
+                        background .3s;
+        }
+
+        .quick-link:hover {
+            transform: translateY(-6px);
+            border-color: #a855f788;
+            background: #171e30;
+        }
+
+        .quick-link .quick-icon {
+            font-size: 25px;
+            display: block;
+            margin-bottom: 13px;
+        }
+
+        .quick-link h2 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .quick-link p {
+            color: #a2abc0;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        @keyframes heroEnter {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes gradientFlow {
+            to { background-position: 200% center; }
+        }
+
+        @keyframes cardFloat {
+            0%, 100% { translate: 0 0; }
+            50% { translate: 0 -9px; }
+        }
+
+        @media (max-width: 800px) {
+            .hero-stats {
+                justify-content: center;
+                gap: 24px;
+            }
+
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-link {
+                padding: 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-content,
+            .hero h1 .gradient,
+            .floating-card {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="index.html" class="logo" aria-label="Mohit Rarotiya Home">
+            MOHIT<span>.</span>
+        </a>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="navMenu">
+            ☰
+        </button>
+
+        <nav id="navMenu" aria-label="Main navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html"><b>Skills & projects</b></a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN HERO -->
+    <main>
+        <section class="hero">
+
+            <div class="hero-content reveal">
+
+                <p class="tag">✦ WELCOME TO MY PORTFOLIO</p>
+
+                <h1>
+                    Hi, I'm<br>
+                    <span class="gradient">Mohit Rarotiya</span>
+                </h1>
+
+                <h2>
+                    Creative Mind.
+                    <span id="typing">AI Creator</span>
+                    <span class="cursor">|</span>
+                </h2>
+
+                <p class="description">
+                    Welcome to my digital world. I'm Mohit Rarotiya,
+                    passionate about AI creativity, technology, web
+                    development and turning imaginative ideas into
+                    digital experiences.
+                </p>
+
+                <div class="buttons">
+                    <a href="skills.html" class="btn">
+                        Explore My Work ↗
+                    </a>
+
+                    <a href="contact.html" class="btn btn-outline">
+                        Let's Connect
+                    </a>
+                </div>
+
+                <!-- SOCIAL LINKS -->
+                <div class="socials">
+                    <a href="https://www.instagram.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                       <img src="https://img.icons8.com/?size=80&id=BrU2BBoRXiWq&format=png" ↗
+                    </a>
+
+                    <a href="https://github.com/mohitrarotiya434-cell?utm_source=chatgpt.com"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img src="https://img.icons8.com/?size=100&id=efFfwotdkiU5&format=png&color=000000" alt="github"></img>
+                    </a>
+
+                    <a href="https://www.linkedin.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" ↗></img>
+                    </a>
+                </div>
+
+                <!-- QUICK STATS -->
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>Creative</strong>
+                        <span>My Mindset</span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <strong>Digital</strong>
+                        <span>My World</span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <strong>Learning</strong>
+                        <span>Every Day</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- PROFILE VISUAL -->
+            <div class="hero-image reveal">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="profile-circle">
+                    <img
+                        src="mohitimage.png"
+                        alt="Mohit Rarotiya profile photo"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+
+                    <span class="profile-placeholder">MR</span>
+                </div>
+
+                <div class="floating-card">
+                    ✦ Mohit Rarotiya
+                </div>
+
+                <div class="floating-card card-two">
+                    ⚡ Create. Learn. Grow.
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- QUICK NAVIGATION CARDS -->
+        <section class="quick-links" aria-label="Explore portfolio">
+
+            <a href="about.html" class="quick-link">
+                <span class="quick-icon">👨‍💻</span>
+                <h2>About Me ↗</h2>
+                <p>
+                    Discover my background, interests, goals
+                    and creative journey.
+                </p>
+            </a>
+
+            <a href="skills.html" class="quick-link">
+                <span class="quick-icon">🚀</span>
+                <h2>My Skills & Projects ↗</h2>
+                <p>
+                    Explore my skills, personal projects
+                    and digital creations.
+                </p>
+            </a>
+
+            <a href="contact.html" class="quick-link">
+                <span class="quick-icon">✉️</span>
+                <h2>Contact Me ↗</h2>
+                <p>
+                    Have an idea or collaboration in mind?
+                    Let's connect.
+                </p>
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>
+            Designed with creativity by
+            <span class="gradient">Mohit Rarotiya</span>
+        </p>
+        <p>
+            © <span class="year"></span> Mohit Rarotiya.
+            All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>

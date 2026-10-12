@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Projects | Mohit Rarotiya</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #080b16;
+            color: #ffffff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px 8%;
+            background: #101526;
+            border-bottom: 1px solid #252c43;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #00e5ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        .heading {
+            text-align: center;
+            padding: 55px 20px 25px;
+        }
+
+        .heading h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 12px;
+        }
+
+        .heading h1 span {
+            color: #00e5ff;
+        }
+
+        .heading p {
+            color: #b5bdd1;
+            line-height: 1.7;
+        }
+
+        .section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 22px 60px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .section-title span {
+            color: #00e5ff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: #11182b;
+            border: 1px solid #26334c;
+            padding: 22px;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #00e5ff;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .skill-info span:last-child {
+            color: #00e5ff;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #283047;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00e5ff, #8b5cf6);
+            border-radius: 10px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            background: #11182b;
+            border: 1px solid #26334c;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #00e5ff;
+            box-shadow: 0 10px 30px #00e5ff16;
+        }
+
+        .project-cover {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 52px;
+            background: linear-gradient(135deg, #142b48, #39205b);
+        }
+
+        .project-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-content h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .project-content p {
+            color: #b5bdd1;
+            line-height: 1.6;
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .project-tag {
+            color: #00e5ff;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .project-link {
+            display: inline-block;
+            text-align: center;
+            margin-top: 12px;
+            padding: 12px 16px;
+            background: #00e5ff;
+            color: #07101a;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            background: #ffffff;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            background: #101526;
+            color: #b5bdd1;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .section {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Mohit<span>Rarotiya.</span></div>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills & Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADING -->
+    <header class="heading">
+        <h1>My <span>Skills & Projects</span></h1>
+        <p>My skills, creativity and projects in one place.</p>
+    </header>
+
+    <!-- MY SKILLS -->
+    <section class="section">
+        <h2 class="section-title">My <span>Skills</span></h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-info">
+                    <span>HTML</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-info">
+                    <span>CSS</span>
+                    <span>70%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-info">
+                    <span>JavaScript</span>
+                    <span>40%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 40%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-info">
+                    <span>AI Content Creation</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MY PROJECTS -->
+    <section class="section" id="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card">
+                <div class="project-cover">💻</div>
+
+                <div class="project-content">
+                    <span class="project-tag">HTML • CSS • JavaScript</span>
+                    <h3>Personal Portfolio</h3>
+                    <p>My personal website showcasing my skills and work.</p>
+
+                    <a class="project-link"
+                       href="https://mohitrarotiya.netlify.app">
+                        View Project ↗
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+                <div class="project-cover">🎬</div>
+
+                <div class="project-content">
+                    <span class="project-tag">AI VIDEO</span>
+                    <h3>AI Animated Stories</h3>
+                    <p>My AI-generated animated stories and videos.</p>
+
+                    <!-- YAHAN APNA PROJECT LINK DALO -->
+                    <a class="project-link"
+                       href="https://youtube.com/@mrallstories-t1k?si=EYCK4PpYnm3VOwRw"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Project ↗
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+                <div class="project-cover">🎨</div>
+
+                <div class="project-content">
+                    <span class="project-tag">GRAPHIC DESIGN</span>
+                    <h3>bill Genrater</h3>
+                    <p>Creative thumbnails, posters and digital designs.</p>
+
+                    <!-- YAHAN APNA PROJECT LINK DALO -->
+                    <a class="project-link"
+                       href="https://claude.ai/public/artifacts/4d6ddb81-994b-4b14-85f1-54e6ff069c7c"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Project ↗
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-card">
+                <div class="project-cover">🤖</div>
+
+                <div class="project-content">
+                    <span class="project-tag">AI ART</span>
+                    <h3>Business website</h3>
+                    <p>My AI artwork, creative images and experiments.</p>
+
+                    <!-- YAHAN APNA PROJECT LINK DALO -->
+                    <a class="project-link"
+                       href="https://mohitrarotiya434-cell.github.io/Mr.-Mohit-Rarotiya-/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Project ↗
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT 5 -->
+            <div class="project-card">
+                <div class="project-cover">🚀</div>
+
+                <div class="project-content">
+                    <span class="project-tag">WEB DEVELOPMENT</span>
+                    <h3>My New Project</h3>
+                    <p>Another project I have created or am working on.</p>
+
+                    <!-- YAHAN APNA PROJECT LINK DALO -->
+                    <a class="project-link"
+                       href="https://mohitrarotiya434-cell.github.io/resume-biodeta-maker/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Project ↗
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Mohit Rarotiya | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

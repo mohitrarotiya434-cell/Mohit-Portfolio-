@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | Mohit Rarotiya</title>
+    <meta name="description" content="Learn more about Mohit Rarotiya, his skills, creativity and projects.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080b16;
+            color: #f5f7ff;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 8%;
+            background: #0d1222;
+            border-bottom: 1px solid #26334b;
+        }
+
+        .logo {
+            color: #00e5ff;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: #d9e1f5;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #00e5ff;
+        }
+
+        /* HERO */
+        .about-hero {
+            width: min(1100px, 90%);
+            margin: 65px auto;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .photo-wrap {
+            position: relative;
+            max-width: 370px;
+            width: 100%;
+            margin: auto;
+            padding: 5px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #00e5ff, #7557ff, #00e5ff);
+            box-shadow: 0 0 45px #00e5ff20;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .photo-wrap img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: center 25%;
+            border-radius: 21px;
+            background: #151c30;
+        }
+
+        .photo-label {
+            position: absolute;
+            bottom: 18px;
+            left: 18px;
+            right: 18px;
+            padding: 13px;
+            border-radius: 12px;
+            text-align: center;
+            background: #080b16dd;
+            border: 1px solid #ffffff22;
+            backdrop-filter: blur(10px);
+            color: #00e5ff;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: #00e5ff;
+            background: #00e5ff12;
+            border: 1px solid #00e5ff45;
+            padding: 9px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+        }
+
+        .intro h1 {
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.12;
+            margin-bottom: 20px;
+        }
+
+        .intro h1 span {
+            color: #00e5ff;
+        }
+
+        .intro h2 {
+            font-size: 21px;
+            color: #c5cee1;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .intro p {
+            color: #aeb9d0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 27px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 21px;
+            border-radius: 9px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #00e5ff;
+            color: #06101a;
+        }
+
+        .btn-outline {
+            border: 1px solid #00e5ff;
+            color: #00e5ff;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px #00e5ff22;
+        }
+
+        /* HIGHLIGHTS */
+        .highlights {
+            width: min(1100px, 90%);
+            margin: 0 auto 75px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .highlight-card {
+            padding: 27px 22px;
+            border-radius: 16px;
+            background: #11182b;
+            border: 1px solid #26334b;
+            transition: 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-6px);
+            border-color: #00e5ff;
+        }
+
+        .highlight-card .icon {
+            font-size: 30px;
+            margin-bottom: 16px;
+        }
+
+        .highlight-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-card p {
+            color: #aeb9d0;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ABOUT DETAILS */
+        .details {
+            width: min(1100px, 90%);
+            margin: 0 auto 75px;
+            padding: 38px;
+            background: linear-gradient(135deg, #11182b, #0d1222);
+            border: 1px solid #26334b;
+            border-radius: 20px;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: #00e5ff;
+        }
+
+        .details > p {
+            color: #b5bfd3;
+            font-size: 15px;
+            line-height: 1.9;
+            max-width: 900px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 27px;
+        }
+
+        .info-item {
+            background: #080d1a;
+            border: 1px solid #27334b;
+            padding: 17px;
+            border-radius: 11px;
+            color: #c4cee1;
+            font-size: 14px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #00e5ff;
+            margin-bottom: 7px;
+        }
+
+        /* CTA */
+        .contact-cta {
+            width: min(1100px, 90%);
+            margin: 0 auto 70px;
+            padding: 42px 25px;
+            text-align: center;
+            border-radius: 20px;
+            background: linear-gradient(120deg, #10243a, #20153d);
+            border: 1px solid #344366;
+        }
+
+        .contact-cta h2 {
+            font-size: clamp(26px, 4vw, 36px);
+            margin-bottom: 15px;
+        }
+
+        .contact-cta h2 span {
+            color: #00e5ff;
+        }
+
+        .contact-cta p {
+            color: #b5bfd3;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            background: #0d1222;
+            border-top: 1px solid #26334b;
+            color: #9da9bf;
+            font-size: 13px;
+        }
+
+        /* ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: reveal 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.15s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.45s;
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 760px) {
+            .navbar {
+                flex-direction: column;
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .about-hero {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                margin: 40px auto 55px;
+            }
+
+            .photo-wrap {
+                max-width: 290px;
+            }
+
+            .intro {
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .details {
+                padding: 25px 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Mohit<span>Rarotiya.</span></a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- INTRODUCTION -->
+    <main>
+        <section class="about-hero">
+
+            <div class="photo-wrap reveal">
+                <!-- profile.jpg ko apni photo ke naam se replace kar sakte ho -->
+                <img src="mohitimage.png"
+                     alt="Mohit Rarotiya profile photo">
+
+                <div class="photo-label">
+                    CREATIVE MIND • BIG DREAMS
+                </div>
+            </div>
+
+            <div class="intro reveal delay-1">
+                <span class="eyebrow">GET TO KNOW ME</span>
+
+                <h1>Hello, I'm <span>Mohit Rarotiya</span></h1>
+
+                <h2>Creative Learner | Web Developer | AI Creator</h2>
+
+                <p>
+                    Welcome to my digital world! I am Mohit Rarotiya.
+                    I enjoy exploring technology, learning new skills
+                    and turning creative ideas into digital projects.
+                </p>
+
+                <p>
+                    From building websites to experimenting with AI
+                    content and visual designs, I am always looking
+                    for new ways to learn, improve and create something
+                    meaningful.
+                </p>
+
+                <div class="buttons">
+                    <a href="skills.html#projects" class="btn btn-primary">
+                        Explore My Projects ↗
+                    </a>
+
+                    <a href="contact.html" class="btn btn-outline">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- WHAT I DO -->
+        <section class="highlights">
+
+            <article class="highlight-card reveal">
+                <div class="icon">💻</div>
+                <h3>Web Development</h3>
+                <p>
+                    Creating websites with HTML, CSS and JavaScript
+                    while learning new development techniques.
+                </p>
+            </article>
+
+            <article class="highlight-card reveal delay-1">
+                <div class="icon">🤖</div>
+                <h3>AI Content Creation</h3>
+                <p>
+                    Exploring AI-generated images, animated stories
+                    and creative video concepts.
+                </p>
+            </article>
+
+            <article class="highlight-card reveal delay-2">
+                <div class="icon">🎨</div>
+                <h3>Creative Design</h3>
+                <p>
+                    Experimenting with thumbnails, graphics,
+                    visual ideas and digital presentation.
+                </p>
+            </article>
+
+        </section>
+
+        <!-- PERSONAL DETAILS -->
+        <section class="details reveal">
+            <h2 class="section-title">A Little <span>About Me</span></h2>
+
+            <p>
+                I believe every new skill starts with curiosity and
+                consistent practice. My goal is to keep learning,
+                build useful projects and develop my creativity.
+                This portfolio is where I share my journey and the
+                work I create along the way.
+            </p>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>My Name</strong>
+                    Mohit Rarotiya
+                </div>
+
+                <div class="info-item">
+                    <strong>My Interests</strong>
+                    Coding, AI and Digital Creativity
+                </div>
+
+                <div class="info-item">
+                    <strong>Currently Learning</strong>
+                    Web Development and New Technologies
+                </div>
+
+                <div class="info-item">
+                    <strong>My Goal</strong>
+                    Build creative and useful digital projects
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-cta reveal">
+            <h2>Have an idea? Let's <span>Connect!</span></h2>
+
+            <p>
+                Explore my projects or get in touch to discuss
+                ideas, creativity and technology.
+            </p>
+
+            <a href="contact.html" class="btn btn-primary">
+                Get In Touch ↗
+            </a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Mohit Rarotiya. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
